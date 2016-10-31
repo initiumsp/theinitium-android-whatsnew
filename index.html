@@ -65,6 +65,13 @@
                     $('<div class="separator"><span></span></div>').insertBefore(h2);
                 }
 
+                // remove <p> wrappers of images
+                var imgs = $(element).find("> p > img");
+                for (var i = 0; i < imgs.length; i++) {
+                    var img = imgs[0];
+                    $(img).parent('p')[0].outerHTML = img.outerHTML;
+                }
+
                 $("#content").html(element.innerHTML);
 
             }).fail(function() {
