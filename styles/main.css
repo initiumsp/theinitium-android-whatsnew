@@ -39,7 +39,7 @@ body > .container > header > div {
 	height: 75px;
 }
 
-body > .container > header img.logo {
+body > .container > header img#logo {
 	display: table-cell;
 	vertical-align: bottom;
 	width: 75px;
@@ -47,30 +47,30 @@ body > .container > header img.logo {
 	margin: 0;
 }
 
-body > .container > header .version {
+body > .container > header #version {
 	padding-left: 10px;
 	display: table-cell;
 	vertical-align: bottom;
 }
 
-body > .container > header .date {
+body > .container > header #date {
 	font-size: 13px;
 	color: #838383;
 	display: table-cell;
 	vertical-align: bottom;
 }
 
-body > .container > section.content {
+body > .container > section#content {
 
 }
 
-body > .container > section.content .separator {
+body > .container > section#content .separator {
 	overflow: hidden;
 	padding: 0 15px 0 15px;
 	margin: 15px 0 15px 0;
 }
 
-body > .container > section.content .separator span {
+body > .container > section#content .separator span {
 	content: "";
 	width: 50px;
 	height: 1px;
@@ -79,7 +79,7 @@ body > .container > section.content .separator span {
 	clear: both;
 }
 
-body > .container > section.content > h2 {
+body > .container > section#content > h2 {
 	font-family: SF UI Display, Helvetica Neue, Arial, PingFang TC, Hiragino Sans GB, Microsoft Yahei, sans-serif;
 	font-weight: 500;
 	font-size: 20px;
@@ -88,13 +88,13 @@ body > .container > section.content > h2 {
 	margin: 20px 0 20px 0;
 }
 
-body > .container > section.content > p {
+body > .container > section#content > p {
 	padding: 0 15px 0 15px;
 	margin: 15px 0 15px 0;
 	text-align: justify;
 }
 
-body > .container > section.content > img {
+body > .container > section#content > p img {
 	display: block;
-	width: 100%;
+	margin: 15px -15px 15px -15px;
 }

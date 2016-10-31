@@ -5,24 +5,47 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <script type="text/javascript" src="scripts/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="scripts/marked.min.js"></script>
     <title>新功能介紹</title>
 </head>
 
 <body>
-	<div class="container">
-		<header>
-			<div class="align_left"><img class="logo" src="./images/logo75.png" /></div>
-			<div class="align_left"><span class="version">v1.5.1</span></div>
-			<div class="align_right"><span class="date">2016-11-05</span></div>
-		</header>
+    <div class="container">
+        <header>
+            <div class="align_left"><img id="logo" src="./images/logo75.png" /></div>
+            <div class="align_left"><span id="version">v1.5.1</span></div>
+            <div class="align_right"><span id="date">2016-11-05</span></div>
+        </header>
+        <section id="content">
+        </section>
+    </div>
+    <script type="text/javascript">
+        var qs = (function(a) {
+            if (a == "") return {};
+            var b = {};
+            for (var i = 0; i < a.length; ++i) {
+                var p = a[i].split('=', 2);
+                if (p.length == 1)
+                    b[p[0]] = "";
+                else
+                    b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+            }
+            return b;
+        })(window.location.search.substr(1).split('&'));
 
-		<section class="content">
-			<div class="separator"><span></span></div>
-			<h2>「端」通知中心插件 (Today Widget)</h2>
-			<p>港沒認面條國現中主石記發爸寫學，得二以他歡賽時實十們？育得眾部面的，查以以用總車讀，北於四地團，的點年分一治用轉包我平青市多、爭他為我兒導少問然一費否生整座。</p>
-			<img src="./sample.png" />
-		</section>
-	</div>
+        function parseContent(raw) {
+        	var data = raw;
+        	return marked(data);
+        };
+
+        $.ajax({
+            url: "./contents/" + qs["version"] + "/" + qs["language"] + ".md",
+        }).done(function(data) {
+            var content = parseContent(data);
+            $("#content").html(content);
+        }).fail(function() {}).always(function() {});
+    </script>
 </body>
 
 </html>
