@@ -14,8 +14,8 @@
     <div class="container">
         <header>
             <div class="align_left"><img id="logo" src="./images/logo75.png" /></div>
-            <div class="align_left"><span id="version">v1.5.1</span></div>
-            <div class="align_right"><span id="date">2016-11-05</span></div>
+            <div class="align_left"><span id="version"></span></div>
+            <div class="align_right"><span id="date"></span></div>
         </header>
         <section id="content">
         </section>
@@ -25,25 +25,41 @@
             if (a == "") return {};
             var b = {};
             for (var i = 0; i < a.length; ++i) {
-                var p = a[i].split('=', 2);
+                var p = a[i].split("=", 2);
                 if (p.length == 1)
                     b[p[0]] = "";
                 else
                     b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
             }
             return b;
-        })(window.location.search.substr(1).split('&'));
+        })(window.location.search.substr(1).split("&"));
 
-        function parseContent(raw) {
-        	var data = raw;
-        	return marked(data);
-        };
+        var version = qs["version"];
+        var language = qs["language"];
+        var basic_url = "./contents/" + version + "/";
 
         $.ajax({
-            url: "./contents/" + qs["version"] + "/" + qs["language"] + ".md",
-        }).done(function(data) {
-            var content = parseContent(data);
-            $("#content").html(content);
+            url: basic_url + language + ".md",
+        }).done(function(raw) {
+            var metaExp = /^version: (.*?)\ndate: (.*?)\n\n---\n\n/;
+
+        	var meta_matching = raw.match(metaExp);
+        	$("#version").text("v" + meta_matching[1]);
+        	$("#date").text(meta_matching[2]);
+
+        	raw = raw.replace(metaExp, "");
+        	var data = marked(raw);
+        	element = document.createElement("div");
+        	$(element).html(data);
+
+        	var h2s = $(element).find("h2");
+        	for (var i = 0; i < h2s.length; i++) {
+        		var h2 = h2s[i];
+        		$('<div class="separator"><span></span></div>').insertBefore(h2);
+        	}
+
+            $("#content").html(element.innerHTML);
+
         }).fail(function() {}).always(function() {});
     </script>
 </body>
