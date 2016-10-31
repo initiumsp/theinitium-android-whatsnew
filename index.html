@@ -35,7 +35,7 @@
         })(window.location.search.substr(1).split("&"));
 
         var version = qs["version"];
-        var language = qs["language"] || "tc";
+        var language = qs["language"] || "zh-hant";
         var basic_url = "./contents/" + version + "/";
 
         if (version) {
@@ -63,13 +63,6 @@
                 for (var i = 0; i < h2s.length; i++) {
                     var h2 = h2s[i];
                     $('<div class="separator"><span></span></div>').insertBefore(h2);
-                }
-
-                // remove <p> wrappers of images
-                var imgs = $(element).find("> p > img");
-                for (var i = 0; i < imgs.length; i++) {
-                    var img = imgs[0];
-                    $(img).parent('p')[0].outerHTML = img.outerHTML;
                 }
 
                 $("#content").html(element.innerHTML);

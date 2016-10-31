@@ -17,7 +17,7 @@ html {
 }
 
 body {
-	font-family: Hoefler Text, Songti TC, serif;
+	font-family: Hoefler Text, FZYaSong-L-GBK, Songti TC, Songti SC, serif;
 	font-size: 17px;
 	line-height: 1.55em;
 }
@@ -94,8 +94,7 @@ body > .container > section#content > p {
 	text-align: justify;
 }
 
-body > .container > section#content > img {
+body > .container > section#content > p img {
 	display: block;
 	width: 100%;
-	margin: 15px 0 15px 0;
 }
