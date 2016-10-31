@@ -12,6 +12,13 @@ html, body {
 	float: right;
 }
 
+a {
+	text-decoration: none;
+	border-bottom: 1px solid #31AFBE;
+	padding-bottom: 1px;
+	color: black;
+}
+
 html {
 	background: #F2F2F2;
 }
@@ -97,4 +104,8 @@ body > .container > section#content > p {
 body > .container > section#content > p img {
 	display: block;
 	width: 100%;
+}
+
+body > .container > footer {
+	height: 60px;
 }
