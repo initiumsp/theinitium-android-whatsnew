@@ -20,24 +20,26 @@ body {
 	font-family: Hoefler Text, Songti TC, serif;
 	font-size: 17px;
 	line-height: 1.55em;
+}
+
+body > .container {
 	max-width: 700px;
 	margin: 0 auto;
 }
 
-body > header {
+body > .container > header {
 	padding: 0 15px 0 15px;
 	margin: 30px 0 40px 0;
 	overflow: hidden;
 	line-height: 1em;
 }
 
-body > header > div {
+body > .container > header > div {
 	display: table;
 	height: 75px;
-	float: left;
 }
 
-body > header img.logo {
+body > .container > header img.logo {
 	display: table-cell;
 	vertical-align: bottom;
 	width: 75px;
@@ -45,32 +47,30 @@ body > header img.logo {
 	margin: 0;
 }
 
-body > header .version {
+body > .container > header .version {
 	padding-left: 10px;
-	height: 75px;
 	display: table-cell;
 	vertical-align: bottom;
 }
 
-body > header .date {
+body > .container > header .date {
 	font-size: 13px;
-	height: 75px;
 	color: #838383;
 	display: table-cell;
 	vertical-align: bottom;
 }
 
-body > section.content {
+body > .container > section.content {
 
 }
 
-body > section.content .separator {
+body > .container > section.content .separator {
 	overflow: hidden;
 	padding: 0 15px 0 15px;
 	margin: 15px 0 15px 0;
 }
 
-body > section.content .separator span {
+body > .container > section.content .separator span {
 	content: "";
 	width: 50px;
 	height: 1px;
@@ -79,7 +79,7 @@ body > section.content .separator span {
 	clear: both;
 }
 
-body > section.content > h2 {
+body > .container > section.content > h2 {
 	font-family: SF UI Display, Helvetica Neue, Arial, PingFang TC, Hiragino Sans GB, Microsoft Yahei, sans-serif;
 	font-weight: 500;
 	font-size: 20px;
@@ -88,13 +88,13 @@ body > section.content > h2 {
 	margin: 20px 0 20px 0;
 }
 
-body > section.content > p {
+body > .container > section.content > p {
 	padding: 0 15px 0 15px;
 	margin: 15px 0 15px 0;
 	text-align: justify;
 }
 
-body > section.content > img {
+body > .container > section.content > img {
 	display: block;
 	width: 100%;
 }
