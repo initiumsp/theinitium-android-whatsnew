@@ -1,0 +1,100 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.align_left {
+	float: left;
+}
+
+.align_right {
+	float: right;
+}
+
+html {
+	background: #F2F2F2;
+}
+
+body {
+	font-family: Hoefler Text, Songti TC, serif;
+	font-size: 17px;
+	line-height: 1.55em;
+	max-width: 700px;
+	margin: 0 auto;
+}
+
+body > header {
+	padding: 0 15px 0 15px;
+	margin: 30px 0 40px 0;
+	overflow: hidden;
+	line-height: 1em;
+}
+
+body > header > div {
+	display: table;
+	height: 75px;
+	float: left;
+}
+
+body > header img.logo {
+	display: table-cell;
+	vertical-align: bottom;
+	width: 75px;
+	height: 75px;
+	margin: 0;
+}
+
+body > header .version {
+	padding-left: 10px;
+	height: 75px;
+	display: table-cell;
+	vertical-align: bottom;
+}
+
+body > header .date {
+	font-size: 13px;
+	height: 75px;
+	color: #838383;
+	display: table-cell;
+	vertical-align: bottom;
+}
+
+body > section.content {
+
+}
+
+body > section.content .separator {
+	overflow: hidden;
+	padding: 0 15px 0 15px;
+	margin: 15px 0 15px 0;
+}
+
+body > section.content .separator span {
+	content: "";
+	width: 50px;
+	height: 1px;
+	background: #838383;
+	float: left;
+	clear: both;
+}
+
+body > section.content > h2 {
+	font-family: SF UI Display, Helvetica Neue, Arial, PingFang TC, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+	font-weight: 500;
+	font-size: 20px;
+	clear: both;
+	padding: 0 15px 0 15px;
+	margin: 20px 0 20px 0;
+}
+
+body > section.content > p {
+	padding: 0 15px 0 15px;
+	margin: 15px 0 15px 0;
+	text-align: justify;
+}
+
+body > section.content > img {
+	display: block;
+	width: 100%;
+}
