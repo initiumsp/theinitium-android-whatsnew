@@ -35,32 +35,48 @@
         })(window.location.search.substr(1).split("&"));
 
         var version = qs["version"];
-        var language = qs["language"];
+        var language = qs["language"] || "tc";
         var basic_url = "./contents/" + version + "/";
 
-        $.ajax({
-            url: basic_url + language + ".md",
-        }).done(function(raw) {
-            var metaExp = /^version: (.*?)\ndate: (.*?)\n\n---\n\n/;
+        if (version) {
+            $.ajax({
+                url: basic_url + language + ".md",
+            }).done(function(raw) {
+                // parse and remove meta
+                var metaExp = /^version: (.*?)\ndate: (.*?)\n\n---\n\n/;
+                var meta_matching = raw.match(metaExp);
+                $("#version").text("v" + meta_matching[1]);
+                $("#date").text(meta_matching[2]);
+                raw = raw.replace(metaExp, "");
 
-        	var meta_matching = raw.match(metaExp);
-        	$("#version").text("v" + meta_matching[1]);
-        	$("#date").text(meta_matching[2]);
+                // parse and update relative image paths
+                var imgExp = /\!\[(.*?)\]\((.*?)\)/g;
+                raw = raw.replace(imgExp, "![$1](" + basic_url + "$2)");
 
-        	raw = raw.replace(metaExp, "");
-        	var data = marked(raw);
-        	element = document.createElement("div");
-        	$(element).html(data);
+                // conversion
+                var data = marked(raw);
+                var element = document.createElement("div");
+                $(element).html(data);
 
-        	var h2s = $(element).find("h2");
-        	for (var i = 0; i < h2s.length; i++) {
-        		var h2 = h2s[i];
-        		$('<div class="separator"><span></span></div>').insertBefore(h2);
-        	}
+                // add separator before h2 tags
+                var h2s = $(element).find("h2");
+                for (var i = 0; i < h2s.length; i++) {
+                    var h2 = h2s[i];
+                    $('<div class="separator"><span></span></div>').insertBefore(h2);
+                }
 
-            $("#content").html(element.innerHTML);
+                $("#content").html(element.innerHTML);
 
-        }).fail(function() {}).always(function() {});
+            }).fail(function() {
+                $("#content").html("<p>Content not found.</p>");
+
+            }).always(function() {});
+
+        } else {
+            $("#content").html("<p>Version not specified.</p>");
+        }
+
+
     </script>
 </body>
 
