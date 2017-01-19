@@ -1,13 +1,13 @@
 version: 1.5.1
-date: 2016-11-05
+date: 2017-1-20
 
 ---
 
-## “端”通知中心插件 (Today Widget)
+“端”的首页进行了设计改版，现在用户可以看见不同频道的标签，以及各项功能的入口了。另外，在首页右滑可以迅速查找及切换专题与频道。
 
-“端”已经支持 Today Widget 了！请前往通知中心，滑动到底部，点按“编辑”，然后添加“端”widget。
+![Today Widget](./material_home.jpg)
 
-![Today Widget](./widget.png)
+![Today Widget](./material_drawer.jpg)
 
 ## 联系我们
 
