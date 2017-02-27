@@ -3,11 +3,10 @@ date: 2017-2-27
 
 ---
 
-「端」的首頁進行了設計改版，現在用戶可以看見不同頻道的標籤，以及各項功能的入口了。另外，在首頁右滑可以迅速查找及切換專題與頻道。
+「端記圓桌」是端傳媒自己的線上論壇，希望讀者秉承「真誠、舉證、尊重」的原則，讓對話成為可能，一齊探索華語世界的「公共話語」。
 
-![Today Widget](./material_home.jpg)
+![Today Widget](./initium-roundtable.png)
 
-![Today Widget](./material_drawer.jpg)
 
 ## 聯繫我們
 

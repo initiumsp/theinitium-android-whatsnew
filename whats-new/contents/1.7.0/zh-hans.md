@@ -3,11 +3,10 @@ date: 2017-2-27
 
 ---
 
-“端”的首页进行了设计改版，现在用户可以看见不同频道的标签，以及各项功能的入口了。另外，在首页右滑可以迅速查找及切换专题与频道。
+「端记圆桌」是端传媒自己的线上论坛，希望读者秉承「真诚、举证、尊重」的原则，让对话成为可能，一齐探索华语世界的「公共话语」。
 
-![Today Widget](./material_home.jpg)
+![Today Widget](./initium-roundtable.png)
 
-![Today Widget](./material_drawer.jpg)
 
 ## 联系我们
 
