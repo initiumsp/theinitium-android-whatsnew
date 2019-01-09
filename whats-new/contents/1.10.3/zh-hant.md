@@ -7,7 +7,6 @@ date: 2019-1-5
 - 優化了選擇文字的體驗
 - 支持收藏圓桌
 
-![Today Widget](./App_Shortcuts.png)
 
 ## 聯繫我們
 
